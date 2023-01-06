@@ -39,8 +39,6 @@ const ThreeView = () => {
 
 	const props = useTexture(textures[texture]);
 	console.log(props.displacementMap);
-	// props.map.wrapS = THREE.MirroredRepeatWrapping;
-	// props.map.wrapT = THREE.MirroredRepeatWrapping;
 
 	return (
 		<>
@@ -51,9 +49,7 @@ const ThreeView = () => {
 				adjustCamera={1.75}
 				environment="city"
 			>
-				{/* <mesh geometry={geometry} rotation-x={-Math.PI * 0.5} scale={0.2}>
-					<meshStandardMaterial {...props} />
-				</mesh> */}
+
 				<Box args={[1.0, 1.0, 1.0, 100, 100]}>
 					<meshStandardMaterial {...props} />
 				</Box>

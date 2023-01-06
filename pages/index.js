@@ -1,10 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
 import { Canvas } from "@react-three/fiber";
 import ThreeView from "../components/ThreeView";
 import { Suspense } from "react";
+import { Loader } from "@react-three/drei";
 
 export default function Home() {
 	return (
@@ -24,6 +23,10 @@ export default function Home() {
 						<ThreeView />
 					</Suspense>
 				</Canvas>
+				<Loader
+					innerStyles={{ width: "200px" }}
+					dataStyles={{ fontSize: 18 }}
+				/>
 			</main>
 		</>
 	);
