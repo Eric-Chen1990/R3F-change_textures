@@ -21,6 +21,7 @@ const ThreeView = () => {
 			map: "./textures/Metal_Crystals_001_COLOR.jpg",
 			normalMap: "./textures/Metal_Crystals_001_NORM.jpg",
 			roughnessMap: "./textures/Metal_Crystals_001_SPEC.jpg",
+			metalnessMap: "./textures/Metal_Crystals_001_SPEC.jpg",
 			aoMap: "./textures/Metal_Crystals_001_OCC.jpg",
 			// displacementMap: "./textures/Metal_Crystals_001_DISP.png",
 		},
@@ -28,6 +29,7 @@ const ThreeView = () => {
 			map: "./textures/Abstract_005_COLOR.jpg",
 			normalMap: "./textures/Abstract_005_NORM.jpg",
 			roughnessMap: "./textures/Abstract_005_SPEC.jpg",
+			metalnessMap: "./textures/Abstract_005_SPEC.jpg",
 			aoMap: "./textures/Abstract_005_OCC.jpg",
 			// displacementMap: "./textures/Abstract_005_DISP.png",
 		},
@@ -38,7 +40,6 @@ const ThreeView = () => {
 	});
 
 	const props = useTexture(textures[texture]);
-	console.log(props.displacementMap);
 
 	return (
 		<>
@@ -49,7 +50,6 @@ const ThreeView = () => {
 				adjustCamera={1.75}
 				environment="city"
 			>
-
 				<Box args={[1.0, 1.0, 1.0, 100, 100]}>
 					<meshStandardMaterial {...props} />
 				</Box>
