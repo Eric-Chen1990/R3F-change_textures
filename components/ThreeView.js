@@ -1,5 +1,6 @@
 import { Box, OrbitControls, Stage, useTexture } from "@react-three/drei";
 import { useControls } from "leva";
+import * as THREE from "three";
 
 const ThreeView = () => {
 	const textures = {
@@ -40,6 +41,17 @@ const ThreeView = () => {
 	});
 
 	const props = useTexture(textures[texture]);
+	const maps = Object.keys(props);
+	maps.forEach((map) => {
+		console.log(map);
+		props[map].wrapS = THREE.RepeatWrapping;
+		props[map].wrapT = THREE.RepeatWrapping;
+		props[map].repeat.x = 2;
+		props[map].repeat.y = 2;
+	});
+
+	// props.displacementScale = 0.002;
+	// props.displacementBias = -0.002;
 
 	return (
 		<>
